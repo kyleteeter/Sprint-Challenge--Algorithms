@@ -39,3 +39,14 @@ This algorithm is 0(n). The first 3 lines are dropped or ignored because they ar
 Suppose that you have an _n_-story building and plenty of eggs. Suppose also that an egg gets broken if it is thrown off floor _f_ or higher, and doesn't get broken if dropped off a floor less than floor _f_. Devise a strategy to determine the value of _f_ such that the number of dropped eggs is minimized.
 
 Write out your proposed algorithm in plain English or pseudocode and give the runtime complexity of your solution.re.
+
+In this exercise n is limited by the possible number of stories that a building can have. 'F' is a number that should be unchanging even though we have yet to calculate it. 
+
+Pseudocode:
+
+def egg_testing(n):
+   f = 0
+   for i in range(0, n):
+      if egg is broken:
+        f = n
+        return f
