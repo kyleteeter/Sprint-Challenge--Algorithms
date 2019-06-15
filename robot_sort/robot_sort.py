@@ -99,7 +99,17 @@ class SortingRobot:
         # Fill this out
         self.set_light_on()
         while self.set_light_on():
-            self.set_light_off():
+            self.set_light_off()
+            while self.can_move_left():
+                self.move_left()
+                self.swap_item()
+                if self.compare_item() == 1:
+                    self.swap_item()
+                    self.move_left()
+                    self.move_right()
+                    self.set_light_on()
+                
+                
         
 
 
