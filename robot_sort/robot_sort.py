@@ -98,21 +98,27 @@ class SortingRobot:
         """
         # Fill this out
         self.set_light_on()
+
         self.swap_item()
-        while self.set_light_on():
+
+        while self.light_is_on():
             
-            while self.can_move_left():
-                self.move_left()
-                self.swap_item()
+            while self.can_move_right():
+                self.move_right()
                 if self.compare_item() == 1:
                     self.swap_item()
+            if self.compare_item() is None:
+                self.swap_item()
+                self.set_light_off()
+                break
     
             else: 
-                while self.can_move_right():
-                    self.can_move_right()
-                    if self.compare_item() == 1:
+                while self.can_move_left():
+                    self.move_left()
+                    if self.compare_item() is None:
                         self.swap_item()
-                        self.set_light_on()
+                        self.move_right()
+                        self.swap_item()
                         break
 
                 
